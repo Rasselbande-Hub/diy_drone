@@ -1,117 +1,157 @@
 
-# Rasselbande Hub
+## 🚁 Projekt: DIY-Drohne
 
-Zentrale Code-Ablage und Ideensammlung für unsere gemeinsamen Projekte. Hier sammeln wir alles rund um Elektronik, Robotik, Software und kreative DIY-Projekte.
+Entwicklung und Bau einer eigenen Quadrocopter-Drohne mit selbst entwickelter Hardware und Software.
 
-## 🚀 Unsere Projekte
+Ziel ist es, möglichst viele Komponenten selbst zu entwickeln und dabei Erfahrungen in den Bereichen Embedded Systems, Regelungstechnik, PCB-Design und Echtzeitsysteme zu sammeln.
 
-Hier findet ihr alle Projekte, an denen wir bereits arbeiten oder die konkret geplant sind.
+### 📋 Projektübersicht
 
-| Repository | Beschreibung | Technologien | Status |
-| :--- | :--- | :--- | :--- |
-| **[Repo-Name]** | Kurze Beschreibung des Projekts | C++ / ROS 2 | 🟢 In Arbeit |
-| **[Repo-Name]** | Kurze Beschreibung des Projekts | Python / Docker | 🟡 Geplant |
-
-### Projektstatus
-
-- 🟢 **In Arbeit** – Aktive Entwicklung
-- 🟡 **Geplant** – Umsetzung ist vorgesehen
-- ✅ **Abgeschlossen** – Projekt ist fertig
-- ⏸️ **Pausiert** – Aktuell nicht in Bearbeitung
-
----
-
-
-## 💡 Projektideen & Inspiration
-
-Hier sammeln wir spannende Ideen für zukünftige Projekte rund um Robotik, Elektronik, KI und kreative DIY-Technik.
-
-### 🤖 Robotik & KI
-
-#### Mini-WALL-E mit KI
-[![Mini-WALL-E](https://img.youtube.com/vi/5MZ6O6yT73M/hqdefault.jpg)](https://youtu.be/5MZ6O6yT73M)
-
-Kleiner selbstgebauter Roboter, der sprechen, seine Umgebung wahrnehmen und sich bewegen kann.
-
-**Technologien:** ESP32, KI, Mikrofon, Motoren, 3D-Druck
-
-#### Roboterarm
-[![Roboterarm](https://img.youtube.com/vi/ZEir102PxJ8/hqdefault.jpg)](https://youtu.be/ZEir102PxJ8)
-
-Programmierbarer Roboterarm mit Positionsspeicherung und automatischer Bewegungswiedergabe.
-
-**Technologien:** Arduino, Servomotoren, C++, 3D-Druck
+| Eigenschaft | Planung |
+| :--- | :--- |
+| **Budget** | Ca. 50 € |
+| **Gewicht** | Max. 250 g |
+| **Größe** | Ca. 12 × 12 cm (vorläufig) |
+| **Bauform** | Quadrocopter (4 Motoren) |
+| **Programmiersprachen** | C, C++ oder Rust |
+| **Entwicklungsumgebung** | VS Code / weitere IDEs |
+| **PCB-Design** | KiCad |
+| **CAD-Konstruktion** | Fusion 360 / Alternativen |
+| **Projektstatus** | 🟡 Konzeptphase |
 
 ---
 
-### 🔌 Elektronik & Smart Devices
+### 🔧 Hardware
 
-#### Stella AI Sprachassistent
-[![Sprachassistent](https://img.youtube.com/vi/MMQMG_purmE/hqdefault.jpg)](https://youtu.be/MMQMG_purmE?t=385)
+Folgende Komponenten werden voraussichtlich benötigt:
 
-Eigener KI-Sprachassistent mit Spracheingabe und Sprachausgabe.
+- [ ] 4 × Elektromotoren
+- [ ] Motoransteuerung (ESCs oder eigene Treiberschaltung)
+- [ ] Mikrocontroller oder Raspberry Pi
+- [ ] IMU (Beschleunigungssensor und Gyroskop)
+- [ ] Barometer zur Höhenmessung
+- [ ] Akku und Spannungsversorgung
+- [ ] Eigene Platine (PCB)
+- [ ] Drohnenrahmen
+- [ ] Propeller
+- [ ] Optional: Kamera
+- [ ] Optional: Funkmodul
 
-**Technologien:** Mikrocontroller, Mikrofon, Lautsprecher, KI-Anbindung
-
----
-
-### 🎨 Kreative DIY-Projekte
-
-#### DIY-Projekt 1
-[![DIY-Projekt](https://img.youtube.com/vi/r7WV-IAMnDo/hqdefault.jpg)](https://youtu.be/r7WV-IAMnDo)
-
-**Beschreibung:** Noch ergänzen.
-
-#### Neue Projektidee 5
-[![Projektidee 5](https://img.youtube.com/vi/V_mZsiZcy7s/hqdefault.jpg)](https://youtu.be/V_mZsiZcy7s)
-
-**Beschreibung:** Noch ergänzen.
-
-#### DIY-Plotter
-[![DIY-Plotter](https://img.youtube.com/vi/qyNWDzO6kKQ/hqdefault.jpg)](https://youtu.be/qyNWDzO6kKQ)
-
-Selbstgebaute Zeichenmaschine, die automatisch Bilder und geometrische Formen zeichnen kann.
-
-**Technologien:** Arduino/ESP32, Schrittmotoren, Motortreiber, 3D-Druck
+**Offene Hardwarefragen:**
+- Welcher Mikrocontroller eignet sich am besten?
+- Raspberry Pi oder Mikrocontroller als Hauptrechner?
+- Welche Motoren und Propeller passen zur Drohnengröße?
+- Wie lässt sich das Gewicht unter 250 g halten?
+- Welche Komponenten können auf einer eigenen Platine integriert werden?
 
 ---
 
-## 🛠️ Quick Guide
+### 💻 Software & Regelungstechnik
 
-Damit die Zusammenarbeit übersichtlich bleibt, gelten ein paar einfache Regeln.
+#### Flugregelung
+- Entwicklung einer eigenen Flugregelung
+- Auswertung von IMU- und Barometerdaten
+- Lageregelung (Roll, Pitch, Yaw)
+- Optional: Höhenregelung
+- Untersuchung verschiedener Regelungsansätze (z. B. PID)
 
-### Branches
+#### Rapid Control Prototyping (RCP)
+- Prüfen, ob RCP für die Reglerentwicklung sinnvoll ist
+- Modellbasierte Entwicklung der Flugregelung
+- Automatische Codegenerierung aus einem Reglermodell
+- Integration des generierten Codes auf dem Mikrocontroller
 
-**Features und Fixes nicht direkt in `main` committen.** Stattdessen einen eigenen Branch erstellen.
+#### Echtzeitsystem (RTOS)
+- Prüfung des Einsatzes eines RTOS
+- Zeitgesteuerte Ausführung der Regelalgorithmen
+- Sensorabfrage und Datenverarbeitung
+- Kommunikation zwischen verschiedenen Softwaretasks
 
-- `feature/...` – Neue Funktionen
-- `fix/...` – Fehlerbehebungen
-
-Beispiel:
-
-```bash
-git checkout -b feature/motor-control
-```
-
-### Pull Requests
-
-- Änderungen über einen Pull Request (PR) einreichen.
-- Kurz beschreiben, was geändert wurde.
-- Vor dem Merge möglichst von jemand anderem prüfen lassen.
-
-### Issues
-
-Bugs, Aufgaben und Verbesserungsvorschläge als Issues im jeweiligen Repository festhalten.
-
----
-
-## 📌 Gemeinsame Regeln
-
-- **Dokumentation:** Jedes Projekt sollte eine eigene README besitzen.
-- **Nachvollziehbarkeit:** Commits möglichst eindeutig benennen.
-- **Ideen willkommen:** Neue Projektvorschläge jederzeit in die Ideensammlung eintragen.
-- **Code teilen:** Wiederverwendbare Funktionen und Komponenten möglichst gut dokumentieren.
+#### Kommunikation
+- Entscheidung zwischen autonomem/lokalem Betrieb und Funksteuerung
+- Optional: Drahtlose Übertragung von Messdaten
+- Optional: Kameraübertragung
+- Entwicklung eines geeigneten Kommunikationskonzepts
 
 ---
 
-*Rasselbande Hub – Ideen sammeln, entwickeln und gemeinsam umsetzen.*
+### 🛠️ Entwicklungswerkzeuge
+
+| Bereich | Werkzeug |
+| :--- | :--- |
+| Firmware | C / C++ / Rust |
+| IDE | Visual Studio Code |
+| PCB-Design | KiCad |
+| CAD | Fusion 360 |
+| Regelungsentwicklung | MATLAB / Simulink (optional) |
+| Versionsverwaltung | Git / GitHub |
+
+---
+
+### 👥 Aufgabenverteilung
+
+| Person | Schwerpunkt | Aufgaben |
+| :--- | :--- | :--- |
+| **Marcus** | Kamera & Recheneinheit | Kamerakonzept, Raspberry Pi oder Mikrocontroller evaluieren |
+| **Nicholas** | Regelungstechnik | Flugregelung, RCP und automatische Codegenerierung untersuchen |
+| **Nico** | Embedded Software & Sensorik | RTOS-Konzept, Sensorauswahl und Sensoranbindung untersuchen |
+
+#### Marcus – Kamera & Recheneinheit
+- [ ] Möglichkeiten zur Kameraintegration untersuchen
+- [ ] Raspberry Pi und Mikrocontroller vergleichen
+- [ ] Anforderungen an Rechenleistung und Energieverbrauch bestimmen
+- [ ] Erste Hardwareempfehlung erarbeiten
+
+#### Nicholas – Regelungstechnik
+- [ ] Grundlagen der Drohnenregelung untersuchen
+- [ ] Geeignete Regelungsstruktur erarbeiten
+- [ ] Einsatzmöglichkeiten von RCP prüfen
+- [ ] Automatische Codegenerierung evaluieren
+- [ ] Anforderungen an die Reglerausführung definieren
+
+#### Nico – RTOS & Sensorik
+- [ ] Geeignete IMU-Sensoren vergleichen
+- [ ] Barometer und weitere Sensoren untersuchen
+- [ ] RTOS gegenüber einer Bare-Metal-Lösung bewerten
+- [ ] Sensoranbindung über I²C / SPI untersuchen
+- [ ] Konzept für Sensorabfrage und zeitgesteuerte Verarbeitung erarbeiten
+
+---
+
+### ❓ Offene Entscheidungen
+
+- [ ] Endgültige Größe und Gewicht festlegen
+- [ ] Budget und Kostenaufteilung konkretisieren
+- [ ] Mikrocontroller / Recheneinheit auswählen
+- [ ] Motoren, Propeller und Akku auswählen
+- [ ] Programmiersprache festlegen
+- [ ] RTOS oder Bare Metal entscheiden
+- [ ] Einsatz von RCP und Codegenerierung festlegen
+- [ ] Kamera ja/nein entscheiden
+- [ ] Funksteuerung oder lokaler/autonomer Betrieb entscheiden
+- [ ] Erste Systemarchitektur erstellen
+
+---
+
+### 🗺️ Geplanter Projektablauf
+
+| Phase | Inhalt | Status |
+| :--- | :--- | :--- |
+| 1. Konzept | Anforderungen, Recherche und Aufgabenverteilung | 🟡 In Arbeit |
+| 2. Hardwareauswahl | Motoren, Sensoren, Akku und Mikrocontroller | ⚪ Offen |
+| 3. Systemdesign | Schaltplan, PCB und CAD-Modell | ⚪ Offen |
+| 4. Softwareentwicklung | Sensorik, RTOS und Flugregelung | ⚪ Offen |
+| 5. Integration | Zusammenbau und Inbetriebnahme | ⚪ Offen |
+| 6. Tests | Reglertuning, Prüfstand und Flugversuche | ⚪ Offen |
+
+---
+
+### 🎯 Erstes gemeinsames Ziel
+
+Erstellung eines grundlegenden Systemkonzepts mit:
+
+1. Grober Hardwarearchitektur
+2. Vorauswahl der wichtigsten Komponenten
+3. Konzept für Software und Flugregelung
+4. Erste Kostenschätzung
+5. Entscheidung über das weitere Vorgehen
